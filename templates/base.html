@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ config.site_title }}</title>
+    <!-- 调试用静态文件路径 -->
+    <link rel="icon" href="{{ config.favicon_ico }}" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand">{{ config.site_title }}</a>
+            <div class="nav-links">
+                {% macro render_nav(item) %}
+                {% if item.children %}
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link">{{ item.text }} ↓</a>
+                    <div class="dropdown-content">
+                        {% for child in item.children %}
+                            {{ render_nav(child) }}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+                <a href="{{ item.link }}" class="nav-link" {% if item.link.startswith('http') %}target="_blank"{% endif %}>{{ item.text }}</a>
+                {% endif %}
+                {% endmacro %}
+                
+                {% for item in navigation %}
+                    {{ render_nav(item) }}
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                {{ toc|safe }}
+            </nav>
+        </aside>
+        <main class="main-content">
+            {{ content|safe }}
+        </main>
+    </div>
+    <button id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ 返回顶部</button>
+    <script src="/static/scripts.js"></script>
+</body>
+</html>

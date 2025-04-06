@@ -1,0 +1,39 @@
+{
+    "site_title": "tyweb.pages.dev",
+    "site_description": "自动生成的文档站点",
+    "favicon_ico": "/favicon.ico",
+    "markdown_dir": "docs",
+    "output_dir": "_site",
+    "navigation": [
+        {
+            "text": "网站首页",
+            "link": "/"
+        },
+        {
+            "text": "开始阅读",
+            "link": "/get-started.html"
+        },
+        {
+            "text": "开发必备",
+            "children": [
+                {"text": "在线工具大全", "link": "https://www.zxgj.cn/" },
+                {"text": "在线ASCII码表", "link": "http://www.fly63.com/tool/ascii/" },
+                {"text": "正则表达式调试工具", "link": "https://regexr.com/" },
+                {"text": "正则表达式可视化", "link": "https://jex.im/regulex/" },
+                {"text": "BASE64编解码工具", "link": "https://base64.supfree.net/" },
+                {"text": "MD5编码工具", "link": "https://www.zxgj.cn/g/md5" },
+                {"text": "AES/DES加解密", "link": "http://www.fly63.com/tool/cipher/" },
+                {"text": "ASCII编解码工具", "link": "https://www.matools.com/code-convert-ascii" },
+                {"text": "在线JSON解析", "link": "http://www.json.cn/" },
+                {"text": "CSS可视化工具", "link": "https://enjoycss.com/" },
+                {"text": "HTTP在线接口测试", "link": "http://www.fly63.com/php/http/" },
+                {"text": "在线编译套装", "link": "https://c.runoob.com/" },
+                {"text": "在线文本比对", "link": "http://www.fly63.com/tool/textdiff/" }
+            ]
+        },
+        {
+            "text": "GitHub",
+            "link": "https://github.com"
+        }
+    ]
+}
